@@ -1,10 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { products } from './products';
+import { caterories } from './categories';
 
 const ProductList = () => {
   return (
     <div className="product-list">
+      <h1>Категории</h1>
+      <ul>
+        {caterories.map((i) => (
+          <li key={i.id} className="product-item" style={{ backgroundColor: i.color }}>
+            <img src={i.img} alt={i.name} width={100} />
+            <h2>{i.name}</h2>
+          </li>
+        ))}
+      </ul>
       <h1>Список продуктов</h1>
       {/* <ul>
         {products.map((i) => (
